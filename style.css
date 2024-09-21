@@ -1,0 +1,253 @@
+:root {
+    --Blue: hsl(246, 80%, 60%);
+
+    --Light-red-work: hsl(15, 100%, 70%);
+    --Soft-blue-play: hsl(195, 74%, 62%);
+    --Light-red-study: hsl(348, 100%, 68%);
+    --Lime-green-exercise: hsl(145, 58%, 55%);
+    --Violet-social: hsl(264, 64%, 52%);
+    --Soft-orange-self-care: hsl(43, 84%, 65%);
+
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 43%, 35%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Very-dark-blue);
+    color: white;
+    font-family: "Rubik", sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+article {
+    padding-block: 4rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.topic {
+    background-color: var(--Dark-blue);
+    border-radius: 15px;
+}
+
+img[src="images/icon-ellipsis.svg"] {
+    cursor: pointer;
+}
+
+.user {
+    background-color: var(--Blue);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-image {
+    max-width: 80px;
+    max-height: 80px;
+    background-color: white;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.user-image img {
+    width: 100%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info .report-for {
+    color: var(--Pale-Blue);
+    margin-bottom: 0.2rem;
+}
+
+.user-info .user-name {
+    font-size: 1.45rem;
+    font-weight: 300;
+}
+
+.periods {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.periods button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.125rem;
+    color: var(--Pale-Blue);
+    cursor: pointer;
+}
+
+.periods button.active {
+    color: white;
+}
+
+.activities {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.back-ground {
+    padding-top: 2.3rem;
+    border-radius: 20px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.work {
+    background: url("images/icon-work.svg");
+    background-color: var(--Light-red-work);
+    background-repeat: no-repeat;
+    background-position: top -0.7rem right 1rem;
+}
+
+.play {
+    background: url("images/icon-play.svg");
+    background-color: var(--Soft-blue-play);
+    background-repeat: no-repeat;
+    background-position: top -0.7rem right 1rem;
+}
+
+.study {
+    background: url("images/icon-study.svg");
+    background-color: var(--Light-red-study);
+    background-repeat: no-repeat;
+    background-position: top -0.7rem right 1rem;
+}
+
+.exercise {
+    background: url("images/icon-exercise.svg");
+    background-color: var(--Lime-green-exercise);
+    background-repeat: no-repeat;
+    background-position: top -0.2rem right 1rem;
+}
+
+.study {
+    background: url("images/icon-study.svg");
+    background-color: var(--Light-red-study);
+    background-repeat: no-repeat;
+    background-position: top -0.7rem right 1rem;
+}
+
+.social {
+    background: url("images/icon-social.svg");
+    background-color: var(--Violet-social);
+    background-repeat: no-repeat;
+    background-position: top -0.7rem right 1rem;
+}
+
+.self-care {
+    background: url("images/icon-self-care.svg");
+    background-color: var(--Soft-orange-self-care);
+    background-repeat: no-repeat;
+    background-position: top -0.7rem right 1rem;
+}
+
+.activities section {
+    width: 100%;
+    background-color: var(--Dark-blue);
+    border-radius: 20px;
+    padding: 2rem 1rem;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+section:hover {
+    background-color: var(--Desaturated-blue);
+}
+
+section .title,
+section .amount-of-time {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+}
+
+.title span {
+    font-size: 1.125rem;
+}
+
+section .amount-of-time {
+    margin-top: 0.5rem;
+}
+
+.amount-of-time em {
+    font-style: normal;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.amount-of-time span {
+    font-size: 0.9rem;
+    color: var(--Pale-Blue)
+}
+
+/* desktop */
+@media (min-width: 30em) {
+    article {
+        flex-direction: row;
+        max-width: 75%;
+    }
+
+    .topic {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user {
+        flex-direction: column;
+        align-items: start;
+        gap: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    .topic .periods {
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        align-items: start;
+        padding-inline: 2rem;
+
+    }
+
+    .user .user-name {
+        font-size: 2rem;
+    }
+
+    .activities {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+
+    .amount-of-time {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .amount-of-time em {
+        font-size: 3rem;
+    }
+}
